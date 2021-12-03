@@ -11,6 +11,7 @@ namespace Threading
             ParametrizedThreadExample.Run();
             SmartThreading.AutoResetEventExample.Run();
             ConcurrencyIssues.IssuesOfConcurrencyExample.Run();
+            ThreadSynchronization.SynchronizingThreadsExample.Run();
         }
     }
 

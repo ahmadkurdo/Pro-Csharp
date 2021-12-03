@@ -1,9 +1,9 @@
 using System;
 using System.Threading;
 
-namespace ConcurrencyIssues
+namespace ThreadSynchronization
 {
-    public class IssuesOfConcurrencyExample
+    public class SynchronizingThreadsExample
     {
         public static void Run()
         {
@@ -25,21 +25,25 @@ namespace ConcurrencyIssues
                 t.Start(); 
             }
             Console.ReadLine();
-        }
+        } 
     }
     public class Printer
     {
+        private object _threadLock = new Object();
         public void PrintNumbers()
         {
-            // Display Thread info.
-            Console.WriteLine("-> {0} is executing PrintNumbers()", Thread.CurrentThread.Name);
-            // Print out numbers.
-            for (int i = 0; i < 10; i++)
+            lock(_threadLock)
             {
-                // Put thread to sleep for a random amount of time.
-                Random r = new Random();
-                Thread.Sleep(1000 * r.Next(5));
-                Console.Write("{0}, ", i);
+                // Display Thread info.
+                Console.WriteLine("-> {0} is executing PrintNumbers()", Thread.CurrentThread.Name);
+                // Print out numbers.
+                for (int i = 0; i < 10; i++)
+                {
+                    // Put thread to sleep for a random amount of time.
+                    Random r = new Random();
+                    Thread.Sleep(1000 * r.Next(5));
+                    Console.Write("{0}, ", i);
+                }
             }
             Console.WriteLine();
         }
