@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace Threading
 {
@@ -6,7 +7,8 @@ namespace Threading
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            SimpleThreadExample.Run();
         }
     }
+
 }
