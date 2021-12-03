@@ -8,6 +8,7 @@ namespace Threading
         static void Main(string[] args)
         {
             SimpleThreadExample.Run();
+            ParametrizedThreadExample.Run();
         }
     }
 
