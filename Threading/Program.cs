@@ -15,7 +15,9 @@ namespace Threading
             // ThreadSynchronization.SynchronizingThreadsExample.Run();
             // TimerCallbackExample.Run();
             // TeaMaker.MakeTea();
-            await TeaMaker.MakeTeaAsync();
+            // await TeaMaker.MakeTeaAsync();
+            // TaskParallelism.Run();
+            // PLINQExamples.RunAsParallesWithCancellation();
         }
     }
 
